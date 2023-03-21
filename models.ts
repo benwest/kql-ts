@@ -199,13 +199,36 @@ export interface ContentModel {
   __default: { [key: string]: string };
 }
 
-export interface CollectionModel<TModel> {
-  __collection: TModel;
+export interface CollectionModel<Item> {
+  __collection: Item;
   __default: string[];
-  slice: CollectionModel<TModel>;
-  sort: CollectionModel<TModel>;
-  limit: CollectionModel<TModel>;
-  flip: CollectionModel<TModel>;
+  chunk: CollectionModel<CollectionModel<Item>>;
+  count: number;
+  filterBy: CollectionModel<Item>;
+  find: Item | null;
+  findByKey: Item | null;
+  first: Item | null;
+  flip: CollectionModel<Item>;
+  groupBy: CollectionModel<CollectionModel<Item>>;
+  has: boolean;
+  isEmpty: boolean;
+  isEven: boolean;
+  isNotEmpty: boolean;
+  isOdd: boolean;
+  keys: string[];
+  last: Item | null;
+  limit: CollectionModel<Item>;
+  next: Item | null;
+  not: CollectionModel<Item>;
+  nth: Item | null;
+  offset: CollectionModel<Item>;
+  pagination: any;
+  pluck: any[];
+  prev: Item | null;
+  shuffle: CollectionModel<Item>;
+  slice: CollectionModel<Item>;
+  sortBy: CollectionModel<Item>;
+  without: CollectionModel<Item>;
 }
 
 export interface PagesModel extends CollectionModel<PageModel> {}
