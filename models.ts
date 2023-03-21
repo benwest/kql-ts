@@ -1,3 +1,11 @@
+/**
+ * special props:
+ * __model: name of the model in queries, e.g. `page`, `site`, `file`
+ * __default: default type for the model, like when selecting `true`
+ * __extra: if present, any key will work on the model, and will return this type
+ * __discriminator: field which the `models` prop will use to determine the model (custom kql)[https://github.com/tobimori/web-2023-astro/tree/main/kirby/site/plugins/kql#works-with]
+ */
+
 // https://github.com/getkirby/kql/blob/42e32cb1fa3e295086af99ace08b4510f684db4f/src/Kql/Interceptors/Cms/Model.php#L24
 interface AllowedMethodsForChildren {
   children: PagesModel;
