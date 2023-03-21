@@ -216,11 +216,23 @@ export type KQLQueryData<TQuery extends KQLQuery> = ResolveQuery<
 
 export type KQLSelectData<
   TSelect extends Select,
-  LocalContext = undefined
-> = ResolveQuery<
+  LocalContext
+> = PropsFromModelsWithCollections<
   KirbyContext,
   LocalContext,
-  { query: "site"; select: TSelect }
+  TSelect,
+  undefined
+>;
+
+export type KQLModelsData<
+  TSelect extends Select,
+  TModels extends Models,
+  LocalContext
+> = PropsFromModelsWithCollections<
+  KirbyContext,
+  LocalContext,
+  TSelect,
+  TModels
 >;
 
 export type ErrorResponse = {
