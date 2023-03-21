@@ -260,9 +260,9 @@ export interface FieldModel {
   toFloat: number;
   toObject: ContentModel;
   toInt: number;
-  toPage: PageModel;
+  toPage: PageModel | null;
   toPages: PagesModel;
-  toFile: FileModel;
+  toFile: FileModel | null;
   toFiles: CollectionModel<FileModel>;
   toBlocks: CollectionModel<BlockModel>;
   toStructure: CollectionModel<StructureItemModel>;

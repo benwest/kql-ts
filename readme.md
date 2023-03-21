@@ -31,10 +31,10 @@ const query = {
       },
     },
   },
-} as const;
+} as const; // <- important
 
 type Content = KQLQueryData<typeof query>;
-/*   ^^^^
+/*   ^^^^^^^
 {
   readonly title: string;
   readonly logo: {
@@ -42,7 +42,7 @@ type Content = KQLQueryData<typeof query>;
       readonly width: number;
       readonly height: number;
       readonly placeholder: string;
-  };
+  } | null;
   readonly pages: {
       readonly title: string;
       readonly tags: string[];
