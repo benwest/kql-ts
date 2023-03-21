@@ -63,4 +63,5 @@ if (response.status === "ok") {
 
 ## todo
 
+- [ ] test! lots of things may be wrong!
 - [ ] Finish `models.ts` to annotate all built in Kirby stuff
